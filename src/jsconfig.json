@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["./*"],
+			"@/styles/*": ["./styles/*"],
+			"@/assets/*": ["./assets/*"],
+			"@/components/*": ["./components/*"],
+			"@/sharedComps/*": ["./components/shared/*"],
+			"@/landingComps/*": ["./components/pages/landing/*"],
+			"@/pages/*": ["./pages/*"],
+			"@/navigation/*": ["./navigation/*"]
+		}
+	},
+	"exclude": ["node_modules", "**/node_modules/*"]
+}
