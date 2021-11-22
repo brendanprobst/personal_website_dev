@@ -4,38 +4,39 @@ import headShot from "@/assets/picture.jpg";
 import EmailLink from "@/components/shared/emailLink";
 export default function LandingPage() {
 	return (
-		<header className="App-header">
-			<img src={headShot} className="picture" />
-			<Link to={"/about_me"} id="about_me_link">
-				<h4>About Me</h4>
-			</Link>
-			<h2>Hi, Website Coming Soon</h2>
-			<h5>
-				If you need to contact me, please email{" "}
-				<EmailLink
-					email="bprobst1029@gmail.com"
-					subject="Hi! I found your website"
-					body=""
-				>
-					bprobst1029@gmail.com
-				</EmailLink>{" "}
-				or{" "}
-				<EmailLink
-					email="bprobst@quae.app"
-					subject="Hi! I found your website"
-					body=""
-				>
-					bprobst@quae.app
-				</EmailLink>{" "}
-				or{" "}
-				<EmailLink
-					email="bprobst@stevens.edu"
-					subject="Hi! I found your website"
-					body=""
-				>
-					bprobst@stevens.edu
-				</EmailLink>
-			</h5>
-		</header>
+		<div className="page landing-page">
+			<div className="card title-card">
+				<img src={headShot} className="picture" />
+				<div style={{ textAlign: "left" }}>
+					<h4>Hi, I'm Brendan</h4>
+					<h6 className="tight-text">
+						I'm procrastinating making this website
+					</h6>
+					<h6 className="tight-text">Please check back in a few weeks</h6>
+
+					<p>
+						Please check out my current project:{" "}
+						<a
+							href="https://quae.app"
+							target="_blank"
+							aria-label="link to quae landing page"
+							style={{ textDecoration: "none" }}
+						>
+							Quae
+						</a>
+					</p>
+					<p>
+						Get In touch with me{" "}
+						<EmailLink
+							email="bprobst1029@gmail.com"
+							subject="Hi! I found your website, I want to talk"
+							body=""
+						>
+							here{" "}
+						</EmailLink>
+					</p>
+				</div>
+			</div>
+		</div>
 	);
 }
