@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import headShot from "@/assets/picture.jpg";
 import EmailLink from "@/components/shared/emailLink";
+import Card from "@/components/shared/card";
 export default function LandingPage() {
 	return (
 		<div className="page landing-page">
-			<div className="card title-card">
+			<Card>
 				<img src={headShot} className="picture" />
 				<div style={{ textAlign: "left" }}>
 					<h4>Hi, I'm Brendan</h4>
@@ -36,7 +37,7 @@ export default function LandingPage() {
 						</EmailLink>
 					</p>
 				</div>
-			</div>
+			</Card>
 		</div>
 	);
 }

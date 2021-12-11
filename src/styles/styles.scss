@@ -1,9 +1,17 @@
+@use "./var";
+@use "./typography";
+@import "./mixins";
+@import "./colors";
+@import "./theme";
+
 #App {
 	text-align: center;
 }
 
 .page {
-	background-color: #1f1f1f;
+	@include themed() {
+		background-color: t(var.$bg);
+	}
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
