@@ -1,0 +1,47 @@
+@use "../var";
+@import "../mixins";
+@import "../colors";
+@import "../theme";
+@import "../typography";
+
+.header {
+	padding: 1rem 2.5rem;
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	right: 0;
+	@include themed() {
+		background-color: t(var.$fg);
+		color: t(var.$text);
+	}
+
+	.container {
+		display: grid;
+		grid-template-areas: "logo  title options";
+		align-items: center;
+		margin: 0 auto;
+		max-width: 100rem;
+		#logo {
+			width: 2.5rem;
+			height: 2.5rem;
+			margin-right: auto;
+			grid-area: logo;
+			justify-content: left;
+		}
+		#title {
+			grid-area: title;
+			margin: 0 auto;
+			text-align: center;
+		}
+		#options {
+			width: 2rem;
+			height: 2rem;
+			border-radius: 0.5rem;
+			margin-left: auto;
+
+			grid-area: options;
+			@include flex-container(row, center, center, nowrap);
+		}
+	}
+}

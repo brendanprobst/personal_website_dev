@@ -1,0 +1,84 @@
+@use "./var";
+@use "./typography";
+@import "./mixins";
+@import "./colors";
+@import "./theme";
+
+#App {
+	text-align: center;
+}
+
+.page {
+	@include themed() {
+		background-color: t(var.$bg);
+	}
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
+
+	.background {
+		height: 300vh;
+		width: 100%;
+		background: linear-gradient(red, blue, green);
+	}
+	.view {
+		height: 100vh;
+		.section {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-right: -50%;
+			transform: translate(-50%, -50%);
+			&.visible {
+				opacity: 1;
+				transition: opacity 0.5s linear -0.25s;
+			}
+			&.hidden {
+				opacity: 0;
+				transition: opacity 0.5s linear -0.25s;
+			}
+		}
+	}
+	.centered {
+		position: absolute;
+	}
+	#hello-card {
+		position: fixed;
+		width: min-content;
+	}
+}
+.card {
+	background-color: #262626;
+	border: 3px solid #303030;
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 1rem;
+}
+.title-card {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: 1fr;
+	gap: 1.5rem;
+}
+.picture {
+	height: 20rem;
+	border-radius: 0.75rem;
+	/* width: 10rem; */
+}
+h6 {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: #7266ff;
+}
+h6.tight-text {
+	margin: 0;
+}
+a {
+	color: #3474eb;
+}
+p {
+	font-size: 1.25rem;
+}
